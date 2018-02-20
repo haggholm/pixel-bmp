@@ -2,19 +2,15 @@
   "name": "pixel-bmp",
   "version": "0.0.1",
   "description": "Parse Bitmap to ImageData in cross-platform",
-
   "main": "lib",
   "files": [
     "lib"
   ],
-
   "scripts": {
     "start": "jasminetea --file index.coffee --watch",
     "localhost": "zuul test --local 59798 --open",
-
     "test": "jasminetea --file index.coffee --cover --report --lint",
     "test-cloud": "zuul test",
-
     "prepublish": "node -e \"if(process.env.TRAVIS){}else{process.exit(1)}\" && npm run compile || echo skip prepublish",
     "compile": "coffee --output lib --bare --compile src"
   },
@@ -23,9 +19,8 @@
       "pre-commit": "npm test"
     }
   },
-  
   "dependencies": {
-    "bmp-js": "^0.0.1",
+    "bmp-js": "0.0.3",
     "pixel-util": "^0.0.2"
   },
   "devDependencies": {
@@ -37,7 +32,6 @@
     "jasminetea": "^0.2.1",
     "zuul": "^3.7.2"
   },
-
   "keywords": [
     "pixel",
     "bmp"
